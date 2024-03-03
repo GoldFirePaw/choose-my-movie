@@ -1,0 +1,12 @@
+.moviesContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieContainer {
+  display: flex;
+  margin: 20px;
+  border: 1px solid pink;
+  border-radius: 20px;
+  padding: 20px;
+}

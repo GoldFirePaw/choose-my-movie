@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import { useMoviesFromApi } from "../apis/api/getMoviesFromApi"
-import { Selectors } from "../components/Selectors"
+import { Selectors } from "../components/Selectors/Selectors"
+import { Movies } from "../components/Movies/Movies"
 
 export const Home = () => {
-  const imageUrlBase = "https://image.tmdb.org/t/p/w500"
   const [page, setPage] = useState(1)
   const [genreId, setGenreId] = useState<number | undefined>(undefined)
   const currentYear = new Date().getFullYear().toString()
@@ -40,19 +40,7 @@ export const Home = () => {
         currentYear={currentYear}
       />
       <div>
-        {movies &&
-          movies.map((movie) => (
-            <div key={movie.id}>
-              <h2>{movie.title}</h2>
-              <img
-                width={"100px"}
-                src={`${imageUrlBase}${movie.poster_path}`}
-                alt={`Affiche du film ${movie.title}`}
-              />
-              <p>Date de sortie : {movie.release_date}</p>
-              <p>Popularité : {movie.popularity}</p>
-            </div>
-          ))}
+        <Movies movies={movies} />
       </div>
       <button onClick={handlePreviousPage} disabled={page === 1}>
         Précédent

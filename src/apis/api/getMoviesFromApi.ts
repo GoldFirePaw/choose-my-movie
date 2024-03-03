@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 
-type Results = {
+export type Results = {
   adult: boolean
   backdrop_path: string
   genre_ids: number[]

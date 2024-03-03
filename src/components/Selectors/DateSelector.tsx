@@ -1,4 +1,5 @@
 import React from "react"
+import s from "./Selectors.module.css"
 
 export type DateSelectorProps = {
   setSelectedYear: (id: string) => void
@@ -23,9 +24,8 @@ export const DateSelector = ({
 
   return (
     <div>
-      <label htmlFor="year-selector">Sélectionnez une année : </label>
       <select
-        id="year-selector"
+        className={s.selectContainer}
         value={selectedYear}
         onChange={handleYearChange}
       >

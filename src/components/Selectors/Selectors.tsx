@@ -1,5 +1,6 @@
 import { DateSelector, DateSelectorProps } from "./DateSelector"
 import { GenreSelector, GenreSelectorProps } from "./GenreSelector"
+import s from "./Selectors.module.css"
 
 type SelectorsProps = GenreSelectorProps &
   DateSelectorProps & { currentYear: string }
@@ -21,7 +22,7 @@ export const Selectors = (props: SelectorsProps) => {
   }
 
   return (
-    <>
+    <div className={s.selectorsContainer}>
       <GenreSelector
         setGenreId={setGenreId}
         genreId={genreId}
@@ -32,7 +33,9 @@ export const Selectors = (props: SelectorsProps) => {
         setSelectedYear={setSelectedYear}
         setPage={setPage}
       />
-      <button onClick={handleclick}>Reset filters</button>
-    </>
+      <button className={s.resetSelectorsButton} onClick={handleclick}>
+        Reset filters
+      </button>
+    </div>
   )
 }

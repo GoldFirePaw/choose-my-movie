@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
-import { getMovieGenres } from "../apis/api/getMoviesGenresFromApi"
+import { getMovieGenres } from "../../apis/api/getMoviesGenresFromApi"
+import s from "./Selectors.module.css"
 
 type Genre = {
   id: number
@@ -57,7 +58,11 @@ export const GenreSelector = ({
 
   return (
     <>
-      <select onChange={handleGenreChange} value={genreId || ""}>
+      <select
+        className={s.selectContainer}
+        onChange={handleGenreChange}
+        value={genreId || ""}
+      >
         <option value="" disabled>
           Sélectionnez un genre
         </option>
@@ -67,7 +72,6 @@ export const GenreSelector = ({
           </option>
         ))}
       </select>
-      <div>{genreName}</div>
     </>
   )
 }
