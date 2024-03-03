@@ -22,10 +22,7 @@ export const Home = () => {
     setPage(Math.min(totalPages, page + 1))
   }
 
-  console.log("HOMEEEE")
-
   if (loading) {
-    console.log("Loading")
     return <div>Chargement des films...</div>
   }
 
