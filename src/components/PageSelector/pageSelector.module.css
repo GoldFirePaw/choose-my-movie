@@ -1,0 +1,10 @@
+.buttonsContainer {
+  margin: 30px;
+  display: flex;
+  gap: 10px;
+}
+
+.pageButton {
+  padding: 10px;
+  border-radius: 20px;
+}

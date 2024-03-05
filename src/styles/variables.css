@@ -1,0 +1,23 @@
+/* variables.css */
+:root {
+  --couleur-fond: #f0f2f5;
+  --couleur-card: #ffffff;
+  --couleur-font: #333333;
+  --button-background: #e8eacc;
+  --button-border: #8c9c7c;
+}
+
+.dark-theme {
+  --couleur-fond: #15676d;
+  --couleur-card: #001724;
+  --couleur-font: #ffebd1;
+  --button-background: #001724;
+  --button-border: #15676d;
+  --button-color-font: #ffebd1;
+}
+
+.pink-theme {
+  --couleur-fond: #f9dbbd;
+  --couleur-card: #ffa5ab;
+  --couleur-font: #450920;
+}
