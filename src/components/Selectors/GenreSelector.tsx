@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { getMovieGenres } from "../../apis/api/getMoviesGenresFromApi"
-import s from "./Selectors.module.css"
+import s from "./selectors.module.css"
 
 type Genre = {
   id: number

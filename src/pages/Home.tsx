@@ -2,6 +2,9 @@ import React, { useState } from "react"
 import { useMoviesFromApi } from "../apis/api/getMoviesFromApi"
 import { Selectors } from "../components/Selectors/Selectors"
 import { Movies } from "../components/Movies/Movies"
+import s from "./home.module.css"
+import { PageSelector } from "../components/PageSelector/PageSelector"
+import { ThemeToggle } from "../components/ThemeToggle/ThemeToggle"
 
 export const Home = () => {
   const [page, setPage] = useState(1)
@@ -14,23 +17,12 @@ export const Home = () => {
     selectedYear
   )
 
-  const handlePreviousPage = () => {
-    setPage(Math.max(1, page - 1))
-  }
-
-  const handleNextPage = () => {
-    setPage(Math.min(totalPages, page + 1))
-  }
-
-  console.log("HOMEEEE")
-
   if (loading) {
-    console.log("Loading")
     return <div>Chargement des films...</div>
   }
 
   return (
-    <>
+    <div className={s.container}>
       <Selectors
         setGenreId={setGenreId}
         setPage={setPage}
@@ -42,12 +34,8 @@ export const Home = () => {
       <div>
         <Movies movies={movies} />
       </div>
-      <button onClick={handlePreviousPage} disabled={page === 1}>
-        Précédent
-      </button>
-      <button onClick={handleNextPage} disabled={page === totalPages}>
-        Suivant
-      </button>
-    </>
+      <PageSelector totalPages={totalPages} setPage={setPage} page={page} />
+      <ThemeToggle />
+    </div>
   )
 }

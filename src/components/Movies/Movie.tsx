@@ -13,14 +13,14 @@ export const Movie = (props: MovieProps) => {
     <div key={movie.id} className={s.movieContainer}>
       <div className={s.movieHeader}>
         <img
-          width={"100px"}
+          width={"150px"}
           src={`${imageUrlBase}${movie.poster_path}`}
           alt={`Affiche du film ${movie.title}`}
         />
-        <h2>{movie.title}</h2>
+        <div className={s.movieTitle}>{movie.title}</div>
       </div>
-      <p>Date de sortie : {movie.release_date}</p>
-      <p>Popularité : {movie.popularity}</p>
+      <div className={s.movieInfo}>Date de sortie : {movie.release_date}</div>
+      <div className={s.movieInfo}>Popularité : {movie.popularity}</div>
     </div>
   )
 }

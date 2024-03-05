@@ -1,6 +1,6 @@
 import { DateSelector, DateSelectorProps } from "./DateSelector"
 import { GenreSelector, GenreSelectorProps } from "./GenreSelector"
-import s from "./Selectors.module.css"
+import s from "./selectors.module.css"
 
 type SelectorsProps = GenreSelectorProps &
   DateSelectorProps & { currentYear: string }

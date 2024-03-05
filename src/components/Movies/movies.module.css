@@ -1,12 +1,44 @@
 .moviesContainer {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  overflow-x: auto;
+  scrollbar-width: none;
+  width: 100%;
+  gap: 10px;
+  color: var(--couleur-font);
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 20px;
+  padding: 10px;
 }
 
 .movieContainer {
   display: flex;
-  margin: 20px;
-  border: 1px solid pink;
+  flex-direction: column;
+  background-color: var(--couleur-card);
   border-radius: 20px;
-  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+img {
+  border-radius: 20px 20px 0 0;
+}
+
+.movieHeader {
+  display: flex;
+  flex-direction: column;
+}
+
+.movieTitle {
+  margin: 0 20px;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.movieInfo {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  margin-top: 10px;
+  font-size: 12px;
+  font-weight: 300;
 }
