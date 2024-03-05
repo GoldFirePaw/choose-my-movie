@@ -28,7 +28,7 @@ export function getMoviesFromApi(
   genreId?: number,
   releaseDate?: string
 ): Promise<MovieList> {
-  const apiKey = "bd2c547ae43ebc0fe27758bcec8e4a11"
+  const apiKey = process.env.API_KEY
   let url = `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&page=${updatedPage}`
 
   if (genreId || releaseDate) {
