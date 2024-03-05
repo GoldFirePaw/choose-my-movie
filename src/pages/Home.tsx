@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { useMoviesFromApi } from "../apis/api/getMoviesFromApi"
-import { Selectors } from "../components/Selectors/Selectors"
+import { SelectorsContainer } from "../components/Selectors/SelectorsContainer"
 import { Movies } from "../components/Movies/Movies"
 import s from "./home.module.css"
 import { PageSelector } from "../components/PageSelector/PageSelector"
@@ -23,7 +23,7 @@ export const Home = () => {
 
   return (
     <div className={s.container}>
-      <Selectors
+      <SelectorsContainer
         setGenreId={setGenreId}
         setPage={setPage}
         genreId={genreId}
