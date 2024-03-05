@@ -1,11 +1,11 @@
 import { DateSelector, DateSelectorProps } from "./DateSelector"
 import { GenreSelector, GenreSelectorProps } from "./GenreSelector"
-import s from "./selectors.module.css"
+import s from "./selectorsContainer.module.css"
 
 type SelectorsProps = GenreSelectorProps &
   DateSelectorProps & { currentYear: string }
 
-export const Selectors = (props: SelectorsProps) => {
+export const SelectorsContainer = (props: SelectorsProps) => {
   const {
     setGenreId,
     genreId,

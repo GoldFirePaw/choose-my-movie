@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { getMovieGenres } from "../../apis/api/getMoviesGenresFromApi"
-import s from "./selectors.module.css"
+import s from "./selectorsContainer.module.css"
 
 type Genre = {
   id: number
@@ -19,36 +19,16 @@ export const GenreSelector = ({
   setPage,
 }: GenreSelectorProps) => {
   const [genres, setGenres] = useState<Genre[]>([])
-  const [genreName, setGenreName] = useState("")
 
   useEffect(() => {
     getMovieGenres()
       .then((data) => {
         setGenres(data.genres)
-        if (genreId !== undefined) {
-          const selectedGenre = data.genres.find(
-            (genre) => genre.id === genreId
-          )
-          if (selectedGenre) {
-            setGenreName(selectedGenre.name)
-          }
-        }
       })
       .catch((error) => {
         console.error("Impossible de charger les genres", error)
       })
   }, [])
-
-  useEffect(() => {
-    if (genreId !== undefined) {
-      const selectedGenre = genres.find((genre) => genre.id === genreId)
-      if (selectedGenre) {
-        setGenreName(selectedGenre.name)
-      } else {
-        setGenreName("")
-      }
-    }
-  }, [genres, genreId])
 
   const handleGenreChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const id = parseInt(event.target.value, 10)

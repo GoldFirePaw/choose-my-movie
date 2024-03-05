@@ -1,5 +1,5 @@
 import React from "react"
-import s from "./selectors.module.css"
+import s from "./selectorsContainer.module.css"
 
 export type DateSelectorProps = {
   setSelectedYear: (id: string) => void
